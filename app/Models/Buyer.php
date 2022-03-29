@@ -1,30 +1,38 @@
 <?php
 
-namespace app\Models;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class Buyer
- * @package app\Models
+ * @package App\Models
  *
  * @property int $id
  * @property string $name
- * @property boolean $blocked
- * @property string $surname
- * @property string $phone
- * @property string $email
+ * @property string $city
+ * @property string $street_or_district
+ * @property string $house
+ * @property string $floor
+ * @property string $apartment
+ * @property string $code
+ * @property string $buyer_id
  */
-class Buyer extends Model{
-    protected $table = 'users';
+class Buyer extends Model
+{
+    use HasFactory;
+
+    protected $table = 'buyers';
 
     protected $fillable = [
         'name',
         'blocked',
         'surname',
         'phone',
-        'email'
+        'email',
+        'registration_date'
     ];
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddressesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations
@@ -22,11 +22,10 @@ class CreateAddressesTable extends Migration
             $table->string('floor')->nullable();
             $table->string('apartment')->nullable();
             $table->string('code')->nullable();
-            $table->integer('buyer_id');
-
+            $table->dateTime('addition_date');
             $table->foreignId('buyer_id')->references('id')->on('buyers');
 
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 
@@ -39,4 +38,4 @@ class CreateAddressesTable extends Migration
     {
         Schema::dropIfExists('addresses');
     }
-}
+};
