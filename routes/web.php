@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuyersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/customers', [BuyersController::class, 'showFiltered']);
+
+Route::get('/customers/{id}', [BuyersController::class, 'showOne']);
