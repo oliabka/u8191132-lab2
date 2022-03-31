@@ -28,7 +28,7 @@ class CountBuyerAddresses extends Command
      */
     public function handle(): int
     {
-        $amount = Address::query()->where('buyer_id',$this->argument('id'))->count();
+        $amount = Address::query()->where('buyer_id', $this->argument('id'))->count();
         echo $amount, "\n";
         return $amount;
     }

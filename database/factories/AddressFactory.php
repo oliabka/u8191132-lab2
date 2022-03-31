@@ -17,6 +17,7 @@ class AddressFactory extends Factory
      * @var string
      */
     protected $model = Address::class;
+
     /**
      * Define the model's default state.
      *
